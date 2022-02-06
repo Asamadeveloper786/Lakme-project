@@ -11,9 +11,29 @@
     --white-color:#ffff;
     --dark-pink-color:#991f53;
 }
+
 nav{
     background:var(--black-color);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 110;
+    /* padding: ; */
 
+}
+/*
+.sticky{
+    position:fixed;
+    top:0;
+    width:100%;
+}
+.sticky + .contentsita{
+    padding-top:70px;
+}
+
+    
+    transition: 0.6s;
 }
 #carouselExampleFade{
     position: relative;
@@ -23,7 +43,7 @@ nav{
     bottom: 0;
     width: 100%;
     height:calc(100vh-70px);
-}
+}*/
 nav:after{
     content:'';
     clear:both;
@@ -36,7 +56,7 @@ nav .logo{
 }
 nav ul{
     float:right;
-    margin-right: 440px;
+    margin-right: 400px;
     list-style: none;
     position: relative;
 }
@@ -141,11 +161,68 @@ nav .icons{
     cursor: pointer;
     font-size: 23px; 
 }
-@media all and (max-width: 1248px){
+nav .search-form{
+    position: absolute;
+    top:105%;
+    right: 2rem;
+    width:50rem;
+    height:4.5rem;
+    background:var(--white-color);
+    border-radius: .5rem;
+    overflow:hidden;
+    display:flex;
+    align-items: center;
+    box-shadow: .5rem 1rem rgba(0,0,0,0.1);
+}
+.search-form input{
+    height: 100%;
+    width: 100%;
+    background:none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color:var(--black-color);
+    padding:0 1.5rem;
+}
+.search-form label{
+    font-size:2.2rem;
+    padding-right:1.5rem;
+    color:var(--black-color);
+    cursor: pointer;
+}
+
+/* Banner Section CSS */
+.carouselStyle{
+    margin-top:70px !important;
+    height:800px !important;
+}
+
+.carouselImage{
+    min-height:800px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1248px){
     nav ul{
         margin-right: 0px;
         float:left;
     }
+    nav{
+        position:fixed;
+        left: 0;
+        top: 0px;
+        padding:0;
+        background:var(--black-color);
+        z-index: 100;
+       
+        overflow:auto;
+        width:calc(100%-100px);
+        transition: all 0.3s ease-out;
+    }
+    /*  height:calc(100%-70px); */
     nav .logo{
         padding-left: 30px;
         width: 100%;
@@ -207,5 +284,28 @@ nav .icons{
     }
     span.cancel:before{
         content:'\f00d';
+    } 
+
+    /* Banner Section CSS */
+    .carouselImage{
+        min-height:500px;
+    } 
+}
+
+@media (max-width:991px){
+    /* Banner Section CSS */
+    .carouselImage{
+        min-height:400px;
     }
 }
+
+@media (max-width:767px){
+    /* Banner Section CSS */
+    .carouselImage{
+        min-height:200px;
+    }
+}
+
+
+
+
